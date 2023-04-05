@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('电影列表'),
+        title: const Text('电影列表'),
         centerTitle: true,
         actions: [
           IconButton(
@@ -37,10 +37,22 @@ class HomePage extends StatelessWidget {
         ],
       ),
       drawer: Drawer(
-        child: ListView(children: [
-          UserAccountsDrawerHeader(accountName: Text('麦子'), accountEmail: Text('abc@qq.com'),
-          currentAccountPicture: CircleAvatar(backgroundImage: AssetImage('images/1.jpg')),)
-        ],),
+        child: ListView(
+          padding: EdgeInsets.all(0),
+          children: const [
+            UserAccountsDrawerHeader(
+              accountName: Text('麦子'),
+              accountEmail: Text('abc@qq.com'),
+              currentAccountPicture:
+                  CircleAvatar(backgroundImage: AssetImage('images/3.jpg')),
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      opacity: 0.7,
+                      fit: BoxFit.cover,
+                      image: AssetImage('images/backimage1.png'))),
+            )
+          ],
+        ),
       ),
     );
   }
